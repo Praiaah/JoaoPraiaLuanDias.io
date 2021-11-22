@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cafe</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="Cafe.png" class="logo">
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="JP/index.html" target="_blank">João Praia</a></li>
+                <li><a href="Luan/index.html" target="_blank">Luan Dias</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Prash Cafe</h2>
+            <a href="#sec" id="btn">Bebidas</a>
+            <img src="mountains_front.png"  id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Bebidas</h2>
+            <body>
+    
+    
+                <img id="bigpic" src="bigpic" />
+        
+            <button onclick="picture()">Mostrar Cardapio</button>
+                </body>
+   
+            <script type="text/javascript">
+
+                function picture(){ 
+                var pic = "Cardapio.jpg"
+                document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+        
+                }
+        
+        
+            </script>
+            <p>Café Mocha Branco - R$14,00<br><br>Café Latte Gelado - R$11,00<br><br>Frappuccino(Todos Sabores) - R$16,50<br><br>Chá Verde e Preto - R$8,00<br><br>Cappuccino - R$12,00</p>
+        </div>
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value *0.5 + 'px';
+            })
+        </script>
+    
+    
+    </head>
+    
+    
+</html>
